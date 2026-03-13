@@ -1,4 +1,4 @@
-name: Build Android APK Without Wrapper
+name: Build Android APK Without Gradle Wrapper
 
 on:
   push:
@@ -10,26 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ استعراض الريبو
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install OpenJDK 17
+      # 2️⃣ تثبيت JDK 17
+      - name: Setup OpenJDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
 
+      # 3️⃣ تثبيت Gradle على النظام
       - name: Install Gradle
         run: |
           sudo apt update
           sudo apt install gradle -y
 
-      - name: Build APK from app folder
+      # 4️⃣ بناء APK
+      - name: Build APK (system Gradle)
         run: |
           cd app
-          gradle build
+          # إذا لم يجد assembleDebug، سيبني build الأساسي
+          gradle build --stacktrace
 
-      - name: Upload APK artifact
+      # 5️⃣ رفع كل ملفات APK الناتجة كـ Artifact
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: VideoDownloader-APK
