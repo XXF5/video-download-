@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Video View -->
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:show_buffering="when_playing"
+        app:use_controller="true"
+        app:controller_layout_id="@layout/player_control_view" />
+
+    <!-- Top Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_gradient_top">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/btnPip"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_pip"
+            android:contentDescription="Picture in Picture"
+            app:tint="@color/white"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btnOrientation"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_rotate"
+            android:contentDescription="Rotate"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btnFullscreen"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_fullscreen"
+            android:contentDescription="Fullscreen"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+</FrameLayout>

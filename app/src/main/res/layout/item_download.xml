@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Thumbnail -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="8dp">
+
+            <ImageView
+                android:id="@+id/ivThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_video_placeholder" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSource"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
+            <!-- Progress -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progressTint="@color/primary" />
+
+                <TextView
+                    android:id="@+id/tvProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/text_hint"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Actions -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnPause"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_pause"
+                android:contentDescription="@string/pause"
+                app:tint="@color/primary" />
+
+            <ImageButton
+                android:id="@+id/btnResume"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_play"
+                android:contentDescription="@string/resume"
+                android:visibility="gone"
+                app:tint="@color/primary" />
+
+            <ImageButton
+                android:id="@+id/btnCancel"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close"
+                android:contentDescription="@string/cancel"
+                app:tint="@color/error" />
+
+            <ImageButton
+                android:id="@+id/btnRetry"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_refresh"
+                android:contentDescription="@string/retry"
+                android:visibility="gone"
+                app:tint="@color/primary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

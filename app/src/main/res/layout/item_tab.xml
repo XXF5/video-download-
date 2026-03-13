@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <!-- Favicon -->
+        <ImageView
+            android:id="@+id/ivFavicon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_browser"
+            app:tint="@color/primary" />
+
+        <!-- Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Close Button -->
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            android:contentDescription="Close tab"
+            app:tint="@color/text_secondary" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
